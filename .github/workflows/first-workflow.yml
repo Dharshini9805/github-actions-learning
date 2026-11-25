@@ -1,5 +1,5 @@
 
-name: My First Workflow
+name: YAML Practice Workflow
 
 on:
   push:
@@ -9,18 +9,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  first-job:
+  yaml-practice:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Welcome message
-        run: echo "Hello from GitHub Actions!"
+      - name: Print welcome message
+        run: echo "Welcome to Day 2!"
 
-      - name: Display current date
-        run: date
+      - name: Display learning topics
+        run: |
+          echo "YAML Basics"
+          echo "Key-value pairs"
+          echo "Lists"
+          echo "Nested structures"
 
-      - name: Display current directory
-        run: pwd
-
-      - name: List files
-        run: ls -la
+      - name: Display completion message
+        run: echo "YAML practice completed successfully"

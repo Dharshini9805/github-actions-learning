@@ -1,0 +1,15 @@
+student:
+  name:Dharshini
+  age:21
+  dept:CSE
+  year:4
+
+skills:
+  -java
+  -git
+  -github actions
+
+learning:
+  curr_topic:YAML
+  day:2
+  completed:true

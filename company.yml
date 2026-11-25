@@ -1,0 +1,11 @@
+company: TCS
+Industry: IT services
+Technologies:
+  -java
+  -AWS
+  -git
+Training:
+  -Git fundamentals
+  -Github actions
+  -CI/CD 
+Training completed: false
