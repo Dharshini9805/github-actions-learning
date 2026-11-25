@@ -1,0 +1,35 @@
+
+name: Day 3 - Repository and Java Setup
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display welcome message
+        run: echo "Day 3 GitHub Actions Practice"
+
+      - name: Display repository files
+        run: ls -la
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Check Java version
+        run: java -version
+
+      - name: Display completion message
+        run: echo "Repository inspection and Java setup completed!"
