@@ -1,0 +1,42 @@
+
+name: Day 5 - Expressions and Conditions
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  workflow_dispatch:
+
+env:
+  PROJECT_NAME: GitHub Actions Learning
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display project name
+        run: echo "Project: ${{ env.PROJECT_NAME }}"
+
+      - name: Display repository
+        run: echo "Repository: ${{ github.repository }}"
+
+      - name: Display branch
+        run: echo "Branch: ${{ github.ref_name }}"
+
+      - name: Display runner OS
+        run: echo "Operating system: ${{ runner.os }}"
+
+      - name: Check main branch
+        if: github.ref_name == 'main'
+        run: echo "This is the main branch"
+
+      - name: Check develop branch
+        if: github.ref_name == 'develop'
+        run: echo "This is the develop branch"
+
+      - name: Final message
+        if: always()
+        run: echo "Day 5 workflow completed"
