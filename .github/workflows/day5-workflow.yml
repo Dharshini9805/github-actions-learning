@@ -18,16 +18,16 @@ jobs:
 
     steps:
       - name: Display project name
-        run: echo "Project: ${{ env.PROJECT_NAME }}"
+        run: 'echo "Project: ${{ env.PROJECT_NAME }}"'
 
       - name: Display repository
-        run: echo "Repository: ${{ github.repository }}"
+        run: 'echo "Repository: ${{ github.repository }}"'
 
       - name: Display branch
-        run: echo "Branch: ${{ github.ref_name }}"
+        run: 'echo "Branch: ${{ github.ref_name }}"'
 
       - name: Display runner OS
-        run: echo "Operating system: ${{ runner.os }}"
+        run: 'echo "Operating system: ${{ runner.os }}"'
 
       - name: Check main branch
         if: github.ref_name == 'main'
