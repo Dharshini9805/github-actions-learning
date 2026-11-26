@@ -1,0 +1,44 @@
+
+name: Day 4 - Multiple Jobs Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build application
+        run: echo "Application build completed"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run tests
+        run: echo "All tests passed"
+
+  security:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Security check
+        run: echo "Security verification completed"
+
+  deploy:
+    needs: [test, security]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deployment
+        run: echo "Application deployed successfully"
