@@ -1,0 +1,22 @@
+
+name: Day 8 - Scheduled Workflow
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+  workflow_dispatch:
+
+jobs:
+  scheduled-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display welcome message
+        run: echo "Welcome to Day 8!"
+
+      - name: Display execution time
+        run: date -u
+
+      - name: Display scheduled workflow message
+        run: echo "This workflow runs automatically every 5 minutes!"
