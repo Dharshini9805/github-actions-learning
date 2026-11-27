@@ -18,10 +18,13 @@ jobs:
 
     steps:
       - name: Display welcome message
-        run: echo "Welcome to Day 6!"
+        run: |
+          echo "Welcome to Day 6!"
 
       - name: Display trigger information
-        run: echo "Workflow triggered successfully!"
+        run: |
+          echo "Workflow triggered successfully!"
 
       - name: Display branch
-        run: echo "Branch: ${{ github.ref_name }}"
+        run: |
+          echo "Branch: ${{ github.ref_name }}"
