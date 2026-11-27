@@ -1,0 +1,27 @@
+
+name: Day 6 - Workflow Triggers
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  trigger-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display welcome message
+        run: echo "Welcome to Day 6!"
+
+      - name: Display trigger information
+        run: echo "Workflow triggered successfully!"
+
+      - name: Display branch
+        run: echo "Branch: ${{ github.ref_name }}"
